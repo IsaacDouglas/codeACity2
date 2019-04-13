@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>apiGoogle</key>
+	<string>AIzaSyA_qLYydpNWzrDGehkjVj9lQYrbeKG9OXo</string>
+	<key>zoom</key>
+	<integer>15</integer>
+	<key>initialLatitude</key>
+	<string>-8.06049979</string>
+	<key>initialLongitude</key>
+	<string>-34.87212320</string>
+</dict>
+</plist>
