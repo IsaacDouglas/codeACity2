@@ -22,7 +22,17 @@
 		901078CB22629DAB001B8690 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901078CA22629DAB001B8690 /* URLSession.swift */; };
 		901078CD2262A473001B8690 /* GoogleNearby.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901078CC2262A473001B8690 /* GoogleNearby.swift */; };
 		901078D02262B6BD001B8690 /* PlaceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901078CF2262B6BD001B8690 /* PlaceType.swift */; };
-		901078D22262B89D001B8690 /* CamadaTOP.kml in Resources */ = {isa = PBXBuildFile; fileRef = 901078D12262B89D001B8690 /* CamadaTOP.kml */; };
+		901FB2EB2262D31B00EFFB50 /* Municipios_PE.kml in Resources */ = {isa = PBXBuildFile; fileRef = 901FB2EA2262D31B00EFFB50 /* Municipios_PE.kml */; };
+		901FB2ED2262D67000EFFB50 /* Recife_antigo.kml in Resources */ = {isa = PBXBuildFile; fileRef = 901FB2EC2262D67000EFFB50 /* Recife_antigo.kml */; };
+		901FB2F32262E8D600EFFB50 /* MapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901FB2F12262E8D600EFFB50 /* MapCollectionViewCell.swift */; };
+		901FB2F42262E8D600EFFB50 /* MapCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 901FB2F22262E8D600EFFB50 /* MapCollectionViewCell.xib */; };
+		901FB2F62262E97400EFFB50 /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901FB2F52262E97400EFFB50 /* UICollectionView.swift */; };
+		901FB2F82262E9BD00EFFB50 /* MapCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901FB2F72262E9BD00EFFB50 /* MapCollectionController.swift */; };
+		901FB2FA2263055000EFFB50 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901FB2F92263055000EFFB50 /* UIView.swift */; };
+		901FB2FC226306E600EFFB50 /* ItemMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901FB2FB226306E600EFFB50 /* ItemMap.swift */; };
+		901FB2FE2263122700EFFB50 /* Santo_antonio.kml in Resources */ = {isa = PBXBuildFile; fileRef = 901FB2FD2263122700EFFB50 /* Santo_antonio.kml */; };
+		901FB301226316A600EFFB50 /* DetailMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901FB2FF226316A600EFFB50 /* DetailMapViewController.swift */; };
+		901FB302226316A600EFFB50 /* DetailMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 901FB300226316A600EFFB50 /* DetailMapViewController.xib */; };
 		907209F82262CC2500026078 /* GMUClusterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 907209AF2262CC2500026078 /* GMUClusterManager.m */; };
 		907209F92262CC2500026078 /* GMUGridBasedClusterAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 907209B32262CC2500026078 /* GMUGridBasedClusterAlgorithm.m */; };
 		907209FA2262CC2500026078 /* GMUWrappingDictionaryKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 907209B62262CC2500026078 /* GMUWrappingDictionaryKey.m */; };
@@ -49,6 +59,7 @@
 		90720A0F2262CC2500026078 /* GMUGeoJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 907209EE2262CC2500026078 /* GMUGeoJSONParser.m */; };
 		90720A102262CC2500026078 /* GQTPointQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 907209F12262CC2500026078 /* GQTPointQuadTree.m */; };
 		90720A112262CC2500026078 /* GQTPointQuadTreeChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 907209F32262CC2500026078 /* GQTPointQuadTreeChild.m */; };
+		90720A142262CF7800026078 /* Investimento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90720A132262CF7800026078 /* Investimento.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,8 +81,18 @@
 		901078CA22629DAB001B8690 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
 		901078CC2262A473001B8690 /* GoogleNearby.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleNearby.swift; sourceTree = "<group>"; };
 		901078CF2262B6BD001B8690 /* PlaceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceType.swift; sourceTree = "<group>"; };
-		901078D12262B89D001B8690 /* CamadaTOP.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CamadaTOP.kml; sourceTree = "<group>"; };
 		901078D32262C0DF001B8690 /* codeACity2-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "codeACity2-Bridging-Header.h"; sourceTree = "<group>"; };
+		901FB2EA2262D31B00EFFB50 /* Municipios_PE.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Municipios_PE.kml; sourceTree = "<group>"; };
+		901FB2EC2262D67000EFFB50 /* Recife_antigo.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Recife_antigo.kml; sourceTree = "<group>"; };
+		901FB2F12262E8D600EFFB50 /* MapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionViewCell.swift; sourceTree = "<group>"; };
+		901FB2F22262E8D600EFFB50 /* MapCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapCollectionViewCell.xib; sourceTree = "<group>"; };
+		901FB2F52262E97400EFFB50 /* UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
+		901FB2F72262E9BD00EFFB50 /* MapCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCollectionController.swift; sourceTree = "<group>"; };
+		901FB2F92263055000EFFB50 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		901FB2FB226306E600EFFB50 /* ItemMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemMap.swift; sourceTree = "<group>"; };
+		901FB2FD2263122700EFFB50 /* Santo_antonio.kml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Santo_antonio.kml; sourceTree = "<group>"; };
+		901FB2FF226316A600EFFB50 /* DetailMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapViewController.swift; sourceTree = "<group>"; };
+		901FB300226316A600EFFB50 /* DetailMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMapViewController.xib; sourceTree = "<group>"; };
 		907209AF2262CC2500026078 /* GMUClusterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMUClusterManager.m; sourceTree = "<group>"; };
 		907209B02262CC2500026078 /* GMUStaticCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUStaticCluster.h; sourceTree = "<group>"; };
 		907209B12262CC2500026078 /* GMUMarkerClustering.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMUMarkerClustering.h; sourceTree = "<group>"; };
@@ -139,6 +160,7 @@
 		907209F52262CC2500026078 /* GQTPointQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQTPointQuadTree.h; sourceTree = "<group>"; };
 		907209F62262CC2500026078 /* GQTPointQuadTreeChild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQTPointQuadTreeChild.h; sourceTree = "<group>"; };
 		907209F72262CC2500026078 /* GQTBounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQTBounds.h; sourceTree = "<group>"; };
+		90720A132262CF7800026078 /* Investimento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investimento.swift; sourceTree = "<group>"; };
 		F0627D2DABBD1C83AA5B118C /* libPods-codeACity2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-codeACity2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -240,6 +262,11 @@
 			children = (
 				901078BE22626665001B8690 /* MapViewController.swift */,
 				901078BF22626665001B8690 /* MapViewController.xib */,
+				901FB2F12262E8D600EFFB50 /* MapCollectionViewCell.swift */,
+				901FB2F22262E8D600EFFB50 /* MapCollectionViewCell.xib */,
+				901FB2F72262E9BD00EFFB50 /* MapCollectionController.swift */,
+				901FB2FF226316A600EFFB50 /* DetailMapViewController.swift */,
+				901FB300226316A600EFFB50 /* DetailMapViewController.xib */,
 			);
 			path = map;
 			sourceTree = "<group>";
@@ -250,6 +277,8 @@
 				901078C322626F35001B8690 /* Session.swift */,
 				901078C522627040001B8690 /* Settings.swift */,
 				901078CC2262A473001B8690 /* GoogleNearby.swift */,
+				90720A132262CF7800026078 /* Investimento.swift */,
+				901FB2FB226306E600EFFB50 /* ItemMap.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -258,6 +287,8 @@
 			isa = PBXGroup;
 			children = (
 				901078CA22629DAB001B8690 /* URLSession.swift */,
+				901FB2F52262E97400EFFB50 /* UICollectionView.swift */,
+				901FB2F92263055000EFFB50 /* UIView.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -411,7 +442,9 @@
 		90720A122262CCF300026078 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				901078D12262B89D001B8690 /* CamadaTOP.kml */,
+				901FB2EA2262D31B00EFFB50 /* Municipios_PE.kml */,
+				901FB2EC2262D67000EFFB50 /* Recife_antigo.kml */,
+				901FB2FD2263122700EFFB50 /* Santo_antonio.kml */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -476,12 +509,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				901FB2FE2263122700EFFB50 /* Santo_antonio.kml in Resources */,
 				901078AF226264DB001B8690 /* LaunchScreen.storyboard in Resources */,
 				901078BC226265DC001B8690 /* SplashViewController.xib in Resources */,
 				901078AC226264DB001B8690 /* Assets.xcassets in Resources */,
-				901078D22262B89D001B8690 /* CamadaTOP.kml in Resources */,
+				901FB302226316A600EFFB50 /* DetailMapViewController.xib in Resources */,
+				901FB2ED2262D67000EFFB50 /* Recife_antigo.kml in Resources */,
 				901078C122626665001B8690 /* MapViewController.xib in Resources */,
 				901078C8226270DE001B8690 /* Settings.plist in Resources */,
+				901FB2F42262E8D600EFFB50 /* MapCollectionViewCell.xib in Resources */,
+				901FB2EB2262D31B00EFFB50 /* Municipios_PE.kml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,12 +584,16 @@
 				90720A032262CC2500026078 /* GMUKMLParser.m in Sources */,
 				901078C622627040001B8690 /* Settings.swift in Sources */,
 				901078CB22629DAB001B8690 /* URLSession.swift in Sources */,
+				901FB2F62262E97400EFFB50 /* UICollectionView.swift in Sources */,
 				901078C422626F35001B8690 /* Session.swift in Sources */,
 				90720A052262CC2500026078 /* GMUGeometryCollection.m in Sources */,
 				90720A082262CC2500026078 /* GMUStyleMap.m in Sources */,
+				901FB2F32262E8D600EFFB50 /* MapCollectionViewCell.swift in Sources */,
+				901FB2FA2263055000EFFB50 /* UIView.swift in Sources */,
 				901078CD2262A473001B8690 /* GoogleNearby.swift in Sources */,
 				907209FD2262CC2500026078 /* GMUDefaultClusterRenderer.m in Sources */,
 				907209F92262CC2500026078 /* GMUGridBasedClusterAlgorithm.m in Sources */,
+				901FB2F82262E9BD00EFFB50 /* MapCollectionController.swift in Sources */,
 				907209FE2262CC2500026078 /* GMUDefaultClusterIconGenerator.m in Sources */,
 				90720A0D2262CC2500026078 /* GMUPair.m in Sources */,
 				90720A0B2262CC2500026078 /* GMUStyle.m in Sources */,
@@ -560,6 +601,8 @@
 				90720A022262CC2500026078 /* GMUHeatmapTileLayer.m in Sources */,
 				901078BB226265DC001B8690 /* SplashViewController.swift in Sources */,
 				901078AA226264D9001B8690 /* codeACity2.xcdatamodeld in Sources */,
+				90720A142262CF7800026078 /* Investimento.swift in Sources */,
+				901FB301226316A600EFFB50 /* DetailMapViewController.swift in Sources */,
 				90720A0E2262CC2500026078 /* GMULineString.m in Sources */,
 				901078A2226264D9001B8690 /* AppDelegate.swift in Sources */,
 				90720A0F2262CC2500026078 /* GMUGeoJSONParser.m in Sources */,
@@ -570,6 +613,7 @@
 				90720A072262CC2500026078 /* GMUPolygon.m in Sources */,
 				907209FA2262CC2500026078 /* GMUWrappingDictionaryKey.m in Sources */,
 				90720A062262CC2500026078 /* GMUPlacemark.m in Sources */,
+				901FB2FC226306E600EFFB50 /* ItemMap.swift in Sources */,
 				907209F82262CC2500026078 /* GMUClusterManager.m in Sources */,
 				901078C022626665001B8690 /* MapViewController.swift in Sources */,
 				907209FC2262CC2500026078 /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,

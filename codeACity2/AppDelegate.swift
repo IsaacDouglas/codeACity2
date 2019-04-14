@@ -31,9 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let screem = UIScreen.main.bounds
         window = UIWindow(frame: screem)
         let view = MapViewController()
-        let navigation = UINavigationController(rootViewController: view)
-        navigation.navigationBar.prefersLargeTitles = true
-        window?.rootViewController = navigation
+        view.tabBarItem = UITabBarItem(title: "Mapa", image: nil, tag: 0)
+//        let navigation = UINavigationController(rootViewController: view)
+//        navigation.navigationBar.prefersLargeTitles = true
+        let tab = UITabBarController()
+        tab.viewControllers = [view]
+        window?.rootViewController = tab
         window?.makeKeyAndVisible()
     }
     

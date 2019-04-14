@@ -13,19 +13,29 @@ import GooglePlaces
 class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
     var placesClient: GMSPlacesClient!
+    var itemList: [ItemMap] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = "Mapa"
+        let location1 = CLLocationCoordinate2D(latitude: -8.063920263040421, longitude: -34.87925793975592)
+        let location2 = CLLocationCoordinate2D(latitude: -8.055445210456666, longitude: -34.87094409763813)
+        let location3 = CLLocationCoordinate2D(latitude: -8.208965354386233, longitude: -35.51045682281256)
+        let um = ItemMap.init(name: "Santo Antônio", location: location1, zoom: 15, kml: "Santo_antonio")
+        let dois = ItemMap.init(name: "Recife", location: location2, zoom: 14.5, kml: "Recife_antigo")
+        let tres = ItemMap.init(name: "Municipios", location: location3, zoom: 8, kml: "Municipios_PE")
+        itemList = [um, dois, tres]
         
         self.initLocation()
         self.initCamera()
         placesClient = GMSPlacesClient.shared()
-        kml()
+        initCarousel()
     }
     
     func initCamera() {
@@ -41,6 +51,9 @@ class MapViewController: UIViewController {
         mapView.settings.compassButton = true
         mapView.isMyLocationEnabled = true
         mapView.delegate = self
+        
+        let bottomMapViewPadding = collectionView.frame.height
+        mapView.padding = UIEdgeInsets(top: 0, left: 0, bottom: bottomMapViewPadding, right: 0)
     }
     
     func initLocation() {
@@ -53,22 +66,22 @@ class MapViewController: UIViewController {
         locationManager.delegate = self
     }
     
-    func teste() {
-        placesClient.currentPlace(callback: { (placeLikelihoodList, error) in
-            if let error = error {
-                print("Pick Place error: \(error.localizedDescription)")
-                return
-            }
-            
-            guard let placeLikelihoodList = placeLikelihoodList else { return }
-            placeLikelihoodList.likelihoods.forEach({ placeLikelihood in
-                print(placeLikelihood.place.name ?? "")
-                print(placeLikelihood.place.formattedAddress?.components(separatedBy: ", ").joined() ?? "")
-                print(placeLikelihood.place.types ?? "")
-                print("")
-            })
-        })
-    }
+//    func teste() {
+//        placesClient.currentPlace(callback: { (placeLikelihoodList, error) in
+//            if let error = error {
+//                print("Pick Place error: \(error.localizedDescription)")
+//                return
+//            }
+//
+//            guard let placeLikelihoodList = placeLikelihoodList else { return }
+//            placeLikelihoodList.likelihoods.forEach({ placeLikelihood in
+//                print(placeLikelihood.place.name ?? "")
+//                print(placeLikelihood.place.formattedAddress?.components(separatedBy: ", ").joined() ?? "")
+//                print(placeLikelihood.place.types ?? "")
+//                print("")
+//            })
+//        })
+//    }
     
     func getLink(location: CLLocationCoordinate2D, radius: Int, type: PlaceType) -> String {
         let key = Session.settings!.apiGoogle
@@ -84,8 +97,8 @@ class MapViewController: UIViewController {
         }
     }
     
-    func kml() {
-        let path = Bundle.main.path(forResource: "CamadaTOP", ofType: "kml")
+    func kml(name: String) {
+        let path = Bundle.main.path(forResource: name, ofType: "kml")
         let url = URL(fileURLWithPath: path!)
         let kmlParser = GMUKMLParser(url: url)
         kmlParser.parse()
@@ -93,6 +106,11 @@ class MapViewController: UIViewController {
                                        geometries: kmlParser.placemarks,
                                        styles: kmlParser.styles)
         renderer.render()
+    }
+    
+    internal func moveCamera(at location: CLLocationCoordinate2D, zoom: Float) {
+        let camera = GMSCameraPosition.camera(withLatitude: location.latitude, longitude: location.longitude, zoom: zoom)
+        mapView.animate(to: camera)
     }
 }
 
