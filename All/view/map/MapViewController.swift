@@ -14,28 +14,53 @@ class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var backView: UIView!
     
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
     var placesClient: GMSPlacesClient!
     var itemList: [ItemMap] = []
+    var tap: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.title = "Mapa"
-        let location1 = CLLocationCoordinate2D(latitude: -8.063920263040421, longitude: -34.87925793975592)
-        let location2 = CLLocationCoordinate2D(latitude: -8.055445210456666, longitude: -34.87094409763813)
         let location3 = CLLocationCoordinate2D(latitude: -8.208965354386233, longitude: -35.51045682281256)
-        let um = ItemMap.init(name: "Santo Antônio", location: location1, zoom: 15, kml: "Santo_antonio", predios: [Predio.init(name: "TOP1", location: location1)])
-        let dois = ItemMap.init(name: "Recife", location: location2, zoom: 14.5, kml: "Recife_antigo", predios: [Predio.init(name: "TOP2", location: location2)])
-        let tres = ItemMap.init(name: "Municipios", location: location3, zoom: 8, kml: "Municipios_PE", predios: [Predio.init(name: "TOP3", location: location3)])
-        itemList = [um, dois, tres]
+       
+        let tres = ItemMap.init(name: "Municipios", location: location3, zoom: 8, kml: "Municipios_PE", predios: [])
+        itemList = [santoAntonio(), recife(), tres]
         
         self.initLocation()
         self.initCamera()
         placesClient = GMSPlacesClient.shared()
         initCarousel()
+    }
+    
+    func santoAntonio() -> ItemMap {
+        let location1 = CLLocationCoordinate2D(latitude: -8.0660695, longitude: -34.879048)
+        let endereco1 = "Av. Nossa Sra. do Carmo, 50 - Santo Antônio, Recife - PE, 50030-230"
+        let predio1 = Predio.init(name: "Predio", location: location1, endereco: endereco1, image: UIImage(named: "predio1")!, info: "")
+        
+        let location2 = CLLocationCoordinate2D(latitude: -8.0623965, longitude: -34.8774828)
+        let endereco2 = "R. do Imperador Pedro II, 221 - Santana"
+        let predio2 = Predio.init(name: "Predio", location: location2, endereco: endereco2, image: UIImage(named: "predio2")!, info: "")
+        
+        let locationItem = CLLocationCoordinate2D(latitude: -8.063920263040421, longitude: -34.87925793975592)
+        return ItemMap.init(name: "Santo Antônio", location: locationItem, zoom: 15, kml: "Santo_antonio", predios: [predio1, predio2])
+    }
+    
+    func recife() -> ItemMap {
+        let location1 = CLLocationCoordinate2D(latitude: -8.0553814, longitude: -34.8711631)
+        let endereco1 = "R. Bernardo Viêira de Melo, 362-512 - Recife"
+        let predio1 = Predio.init(name: "Predio", location: location1, endereco: endereco1, image: UIImage(named: "predio1")!, info: "")
+        
+        let location2 = CLLocationCoordinate2D(latitude: -8.0620127, longitude: -34.8733701)
+        let endereco2 = "R. do Apolo, 59 - Recife Velho"
+        let predio2 = Predio.init(name: "Predio", location: location2, endereco: endereco2, image: UIImage(named: "predio2")!, info: "")
+        
+        let locationItem = CLLocationCoordinate2D(latitude: -8.055445210456666, longitude: -34.87094409763813)
+        return ItemMap.init(name: "Recife", location: locationItem, zoom: 14.5, kml: "Recife_antigo", predios: [predio1, predio2])
     }
     
     func initCamera() {
@@ -64,28 +89,6 @@ class MapViewController: UIViewController {
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
-    }
-    
-//    func teste() {
-//        placesClient.currentPlace(callback: { (placeLikelihoodList, error) in
-//            if let error = error {
-//                print("Pick Place error: \(error.localizedDescription)")
-//                return
-//            }
-//
-//            guard let placeLikelihoodList = placeLikelihoodList else { return }
-//            placeLikelihoodList.likelihoods.forEach({ placeLikelihood in
-//                print(placeLikelihood.place.name ?? "")
-//                print(placeLikelihood.place.formattedAddress?.components(separatedBy: ", ").joined() ?? "")
-//                print(placeLikelihood.place.types ?? "")
-//                print("")
-//            })
-//        })
-//    }
-    
-    func getLink(location: CLLocationCoordinate2D, radius: Int, type: PlaceType) -> String {
-        let key = Session.settings!.apiGoogle
-        return "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(location.latitude),\(location.longitude)&radius=\(radius)&type=\(type.rawValue)&key=\(key)"
     }
     
     func getAdress(location: CLLocationCoordinate2D) {
@@ -118,17 +121,7 @@ extension MapViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
-        
-        let urlNew = getLink(location: coordinate, radius: 2000, type: .restaurant)
-        
-        URLSession.shared.get(urlNew, onErron: { error in
-            print(error.localizedDescription)
-        }, onSucess: { (nearby: GoogleNearby) in
-            if nearby.status == "OK" {
-                let teste = nearby.status
-                print(teste)
-            }
-        })
+        moveCamera(at: coordinate, zoom: 17)
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {

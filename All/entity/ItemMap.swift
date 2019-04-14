@@ -19,4 +19,7 @@ struct ItemMap {
 struct Predio {
     var name: String
     var location: CLLocationCoordinate2D
+    var endereco: String
+    var image: UIImage
+    var info: String
 }

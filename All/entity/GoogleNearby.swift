@@ -16,8 +16,6 @@ struct GoogleNearby: Codable {
 struct Place: Codable {
     var name: String
     var icon: String
-    var rating: Double
     var types: [String]
-    var user_ratings_total: Double
     var vicinity: String
 }

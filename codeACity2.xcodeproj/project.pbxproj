@@ -60,6 +60,7 @@
 		90720A102262CC2500026078 /* GQTPointQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 907209F12262CC2500026078 /* GQTPointQuadTree.m */; };
 		90720A112262CC2500026078 /* GQTPointQuadTreeChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 907209F32262CC2500026078 /* GQTPointQuadTreeChild.m */; };
 		90720A142262CF7800026078 /* Investimento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90720A132262CF7800026078 /* Investimento.swift */; };
+		908B30792263720E00EF6E2F /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908B30782263720E00EF6E2F /* Double.swift */; };
 		909DD740226330230050AD6B /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909DD73F226330230050AD6B /* Marker.swift */; };
 		909DD743226332E10050AD6B /* DetailItemMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909DD741226332E10050AD6B /* DetailItemMapViewController.swift */; };
 		909DD744226332E10050AD6B /* DetailItemMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 909DD742226332E10050AD6B /* DetailItemMapViewController.xib */; };
@@ -164,6 +165,7 @@
 		907209F62262CC2500026078 /* GQTPointQuadTreeChild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQTPointQuadTreeChild.h; sourceTree = "<group>"; };
 		907209F72262CC2500026078 /* GQTBounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQTBounds.h; sourceTree = "<group>"; };
 		90720A132262CF7800026078 /* Investimento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investimento.swift; sourceTree = "<group>"; };
+		908B30782263720E00EF6E2F /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		909DD73F226330230050AD6B /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
 		909DD741226332E10050AD6B /* DetailItemMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemMapViewController.swift; sourceTree = "<group>"; };
 		909DD742226332E10050AD6B /* DetailItemMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailItemMapViewController.xib; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				901078CA22629DAB001B8690 /* URLSession.swift */,
 				901FB2F52262E97400EFFB50 /* UICollectionView.swift */,
 				901FB2F92263055000EFFB50 /* UIView.swift */,
+				908B30782263720E00EF6E2F /* Double.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				907209FC2262CC2500026078 /* GMUNonHierarchicalDistanceBasedAlgorithm.m in Sources */,
 				90720A002262CC2500026078 /* GMUWeightedLatLng.m in Sources */,
 				907209FF2262CC2500026078 /* GMUStaticCluster.m in Sources */,
+				908B30792263720E00EF6E2F /* Double.swift in Sources */,
 				90720A0A2262CC2500026078 /* GMUGroundOverlay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

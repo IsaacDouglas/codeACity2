@@ -11,6 +11,9 @@ import Foundation
 extension MapViewController {
 
     internal func initCarousel() {
+        
+        backView.backgroundColor = .clear
+        
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.showsVerticalScrollIndicator = false
         collectionView.backgroundColor = .clear
@@ -23,6 +26,13 @@ extension MapViewController {
         self.moveCamera(at: first.location, zoom: first.zoom)
         self.mapView.clear()
         self.kml(name: first.kml)
+        first.predios.forEach({ predio in
+            let marker = Marker(position: predio.location)
+            marker.item = first
+            marker.predio = predio
+            marker.map = self.mapView
+            marker.title = predio.name
+        })
     }
 
     private func percent() -> CGFloat {
@@ -36,12 +46,7 @@ extension MapViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let item = itemList[indexPath.row]
-        let view = DetailItemMapViewController()
-        view.item = item
-        view.navigationItem.title = item.name
-        let nav = UINavigationController(rootViewController: view)
-        present(nav, animated: true, completion: nil)
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
