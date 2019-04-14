@@ -8,12 +8,14 @@
 
 import UIKit
 import GoogleMaps
+import GooglePlaces
 
 class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: GMSMapView!
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
+    var placesClient: GMSPlacesClient!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,8 @@ class MapViewController: UIViewController {
         
         self.initLocation()
         self.initCamera()
+        placesClient = GMSPlacesClient.shared()
+        kml()
     }
     
     func initCamera() {
@@ -48,13 +52,65 @@ class MapViewController: UIViewController {
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
     }
-
+    
+    func teste() {
+        placesClient.currentPlace(callback: { (placeLikelihoodList, error) in
+            if let error = error {
+                print("Pick Place error: \(error.localizedDescription)")
+                return
+            }
+            
+            guard let placeLikelihoodList = placeLikelihoodList else { return }
+            placeLikelihoodList.likelihoods.forEach({ placeLikelihood in
+                print(placeLikelihood.place.name ?? "")
+                print(placeLikelihood.place.formattedAddress?.components(separatedBy: ", ").joined() ?? "")
+                print(placeLikelihood.place.types ?? "")
+                print("")
+            })
+        })
+    }
+    
+    func getLink(location: CLLocationCoordinate2D, radius: Int, type: PlaceType) -> String {
+        let key = Session.settings!.apiGoogle
+        return "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(location.latitude),\(location.longitude)&radius=\(radius)&type=\(type.rawValue)&key=\(key)"
+    }
+    
+    func getAdress(location: CLLocationCoordinate2D) {
+        GMSGeocoder().reverseGeocodeCoordinate(location) { response, error in
+            DispatchQueue.main.async {
+                guard let address = response?.firstResult() else { return }
+                print(address.thoroughfare ?? "SEM ENDERECO")
+            }
+        }
+    }
+    
+    func kml() {
+        let path = Bundle.main.path(forResource: "CamadaTOP", ofType: "kml")
+        let url = URL(fileURLWithPath: path!)
+        let kmlParser = GMUKMLParser(url: url)
+        kmlParser.parse()
+        let renderer = GMUGeometryRenderer(map: mapView,
+                                       geometries: kmlParser.placemarks,
+                                       styles: kmlParser.styles)
+        renderer.render()
+    }
 }
 
 extension MapViewController: GMSMapViewDelegate {
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
         print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+        
+        let urlNew = getLink(location: coordinate, radius: 2000, type: .restaurant)
+        
+        URLSession.shared.get(urlNew, onErron: { error in
+            print(error.localizedDescription)
+        }, onSucess: { (nearby: GoogleNearby) in
+            if nearby.status == "OK" {
+                let teste = nearby.status
+                print(teste)
+            }
+        })
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {

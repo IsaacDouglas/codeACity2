@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: screem)
         let view = MapViewController()
         let navigation = UINavigationController(rootViewController: view)
+        navigation.navigationBar.prefersLargeTitles = true
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
     }
