@@ -19,10 +19,10 @@ extension MapViewController {
         collectionView.decelerationRate = .normal
         collectionView.register(cell: MapCollectionViewCell.self)
         
-//        let item = self.itemList[indexPath.row]
-//        self.moveCamera(at: item.location, zoom: item.zoom)
-//        self.mapView.clear()
-//        self.kml(name: item.kml)
+        guard let first = self.itemList.first else { return }
+        self.moveCamera(at: first.location, zoom: first.zoom)
+        self.mapView.clear()
+        self.kml(name: first.kml)
     }
 
     private func percent() -> CGFloat {
@@ -37,7 +37,7 @@ extension MapViewController: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = itemList[indexPath.row]
-        let view = DetailMapViewController()
+        let view = DetailItemMapViewController()
         view.item = item
         view.navigationItem.title = item.name
         let nav = UINavigationController(rootViewController: view)
@@ -71,6 +71,13 @@ extension MapViewController: UICollectionViewDelegate, UICollectionViewDataSourc
             self.moveCamera(at: item.location, zoom: item.zoom)
             self.mapView.clear()
             self.kml(name: item.kml)
+            item.predios.forEach({ predio in
+                let marker = Marker(position: predio.location)
+                marker.item = item
+                marker.predio = predio
+                marker.map = self.mapView
+                marker.title = predio.name
+            })
         }
     }
     

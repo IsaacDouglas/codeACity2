@@ -27,9 +27,9 @@ class MapViewController: UIViewController {
         let location1 = CLLocationCoordinate2D(latitude: -8.063920263040421, longitude: -34.87925793975592)
         let location2 = CLLocationCoordinate2D(latitude: -8.055445210456666, longitude: -34.87094409763813)
         let location3 = CLLocationCoordinate2D(latitude: -8.208965354386233, longitude: -35.51045682281256)
-        let um = ItemMap.init(name: "Santo Antônio", location: location1, zoom: 15, kml: "Santo_antonio")
-        let dois = ItemMap.init(name: "Recife", location: location2, zoom: 14.5, kml: "Recife_antigo")
-        let tres = ItemMap.init(name: "Municipios", location: location3, zoom: 8, kml: "Municipios_PE")
+        let um = ItemMap.init(name: "Santo Antônio", location: location1, zoom: 15, kml: "Santo_antonio", predios: [Predio.init(name: "TOP1", location: location1)])
+        let dois = ItemMap.init(name: "Recife", location: location2, zoom: 14.5, kml: "Recife_antigo", predios: [Predio.init(name: "TOP2", location: location2)])
+        let tres = ItemMap.init(name: "Municipios", location: location3, zoom: 8, kml: "Municipios_PE", predios: [Predio.init(name: "TOP3", location: location3)])
         itemList = [um, dois, tres]
         
         self.initLocation()
@@ -132,7 +132,14 @@ extension MapViewController: GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
-        
+        if let marker = marker as? Marker {
+            let view = DetailMapViewController()
+            view.item = marker.item
+            view.predio = marker.predio
+            view.navigationItem.title = marker.predio?.name
+            let nav = UINavigationController(rootViewController: view)
+            present(nav, animated: true, completion: nil)
+        }
         return true
     }
     

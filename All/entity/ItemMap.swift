@@ -13,4 +13,10 @@ struct ItemMap {
     var location: CLLocationCoordinate2D
     var zoom: Float
     var kml: String
+    var predios: [Predio]
+}
+
+struct Predio {
+    var name: String
+    var location: CLLocationCoordinate2D
 }

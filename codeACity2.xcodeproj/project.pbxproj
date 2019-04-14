@@ -60,6 +60,9 @@
 		90720A102262CC2500026078 /* GQTPointQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 907209F12262CC2500026078 /* GQTPointQuadTree.m */; };
 		90720A112262CC2500026078 /* GQTPointQuadTreeChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 907209F32262CC2500026078 /* GQTPointQuadTreeChild.m */; };
 		90720A142262CF7800026078 /* Investimento.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90720A132262CF7800026078 /* Investimento.swift */; };
+		909DD740226330230050AD6B /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909DD73F226330230050AD6B /* Marker.swift */; };
+		909DD743226332E10050AD6B /* DetailItemMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909DD741226332E10050AD6B /* DetailItemMapViewController.swift */; };
+		909DD744226332E10050AD6B /* DetailItemMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 909DD742226332E10050AD6B /* DetailItemMapViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -161,6 +164,9 @@
 		907209F62262CC2500026078 /* GQTPointQuadTreeChild.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQTPointQuadTreeChild.h; sourceTree = "<group>"; };
 		907209F72262CC2500026078 /* GQTBounds.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQTBounds.h; sourceTree = "<group>"; };
 		90720A132262CF7800026078 /* Investimento.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investimento.swift; sourceTree = "<group>"; };
+		909DD73F226330230050AD6B /* Marker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
+		909DD741226332E10050AD6B /* DetailItemMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemMapViewController.swift; sourceTree = "<group>"; };
+		909DD742226332E10050AD6B /* DetailItemMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailItemMapViewController.xib; sourceTree = "<group>"; };
 		F0627D2DABBD1C83AA5B118C /* libPods-codeACity2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-codeACity2.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -267,6 +273,8 @@
 				901FB2F72262E9BD00EFFB50 /* MapCollectionController.swift */,
 				901FB2FF226316A600EFFB50 /* DetailMapViewController.swift */,
 				901FB300226316A600EFFB50 /* DetailMapViewController.xib */,
+				909DD741226332E10050AD6B /* DetailItemMapViewController.swift */,
+				909DD742226332E10050AD6B /* DetailItemMapViewController.xib */,
 			);
 			path = map;
 			sourceTree = "<group>";
@@ -279,6 +287,7 @@
 				901078CC2262A473001B8690 /* GoogleNearby.swift */,
 				90720A132262CF7800026078 /* Investimento.swift */,
 				901FB2FB226306E600EFFB50 /* ItemMap.swift */,
+				909DD73F226330230050AD6B /* Marker.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -519,6 +528,7 @@
 				901078C8226270DE001B8690 /* Settings.plist in Resources */,
 				901FB2F42262E8D600EFFB50 /* MapCollectionViewCell.xib in Resources */,
 				901FB2EB2262D31B00EFFB50 /* Municipios_PE.kml in Resources */,
+				909DD744226332E10050AD6B /* DetailItemMapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -595,6 +605,7 @@
 				907209F92262CC2500026078 /* GMUGridBasedClusterAlgorithm.m in Sources */,
 				901FB2F82262E9BD00EFFB50 /* MapCollectionController.swift in Sources */,
 				907209FE2262CC2500026078 /* GMUDefaultClusterIconGenerator.m in Sources */,
+				909DD743226332E10050AD6B /* DetailItemMapViewController.swift in Sources */,
 				90720A0D2262CC2500026078 /* GMUPair.m in Sources */,
 				90720A0B2262CC2500026078 /* GMUStyle.m in Sources */,
 				901078D02262B6BD001B8690 /* PlaceType.swift in Sources */,
@@ -605,6 +616,7 @@
 				901FB301226316A600EFFB50 /* DetailMapViewController.swift in Sources */,
 				90720A0E2262CC2500026078 /* GMULineString.m in Sources */,
 				901078A2226264D9001B8690 /* AppDelegate.swift in Sources */,
+				909DD740226330230050AD6B /* Marker.swift in Sources */,
 				90720A0F2262CC2500026078 /* GMUGeoJSONParser.m in Sources */,
 				90720A012262CC2500026078 /* GMUGradient.m in Sources */,
 				90720A092262CC2500026078 /* GMUFeature.m in Sources */,

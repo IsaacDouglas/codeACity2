@@ -1,5 +1,5 @@
 //
-//  DetailMapViewController.swift
+//  DetailItemMapViewController.swift
 //  codeACity2
 //
 //  Created by Isaac Douglas on 14/04/19.
@@ -8,10 +8,9 @@
 
 import UIKit
 
-class DetailMapViewController: UIViewController {
+class DetailItemMapViewController: UIViewController {
 
     var item: ItemMap!
-    var predio: Predio!
     
     override func viewDidLoad() {
         super.viewDidLoad()
