@@ -63,7 +63,7 @@ class DetailMapViewController: UIViewController {
     func calcInvestimento() {
         lbSlideValue.text = "Retorno de \(Double(slider.value).formatter(qtd: 3))%"
         
-        let i = Investimeto2.init(x: 84, y: 600, a: 31.25, p: 80/100, g: 40/100, h: Double(slider.value/100), T0: 4, T1: 2)
+        let i = Investimento.init(x: 84, y: 600, a: 31.25, p: 80/100, g: 40/100, h: Double(slider.value/100), T0: 4, T1: 2)
         
         let tempoMinimo = "Tempo minimo: \(i.tempoMin().formatter(qtd: 1)) meses"
         let tempoMedio = "Tempo médio: \(i.tempoMedio().formatter(qtd: 1)) meses"
